@@ -5,30 +5,21 @@ using UnityEngine.Networking;
 
 public class ShootScript : NetworkBehaviour
 {
-
-
+    //Set fire rate and range
     public float fireRate = 1f;
-
     public float range = 100f;
-
+    //Layermask
     public LayerMask mask;
-
-
+    //Timer for shooting
     private float fireFactor = 0f;
-
-    private GameObject mainCamera;
-
-    // Use this for initialization
-    void Start()
-    {
-        mainCamera = GetComponentInChildren<GameObject>();
-    }
 
     // Update is called once per frame
     void Update()
     {
+        //If is local player
         if(isLocalPlayer)
         {
+            //Allow shooting
             HandleInput();
         }
     }
@@ -45,11 +36,13 @@ public class ShootScript : NetworkBehaviour
         RaycastHit hit;
 
         Debug.Log("Shooting");
-
+        //Ray cast forward
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1000))
         {
-            if(hit.transform.CompareTag("player"))
+            //If raycast hit tag with Player
+            if(hit.transform.CompareTag("Player") || hit.transform.CompareTag("Enemy"))
             {
+                //Tell server name of player shot
                 Cmd_PlayerShot(hit.transform.name);
             }
         }
@@ -57,16 +50,18 @@ public class ShootScript : NetworkBehaviour
 
     void HandleInput()
     {
+        //Count up fireFactor
         fireFactor += Time.deltaTime;
         fireRate = 1 / fireRate;
 
         if(fireFactor >= fireRate)
         {
+            //If you left click
             if(Input.GetMouseButton(0))
             {
+                //Shoot
                 Shoot();
             }
         }
     }
-
 }

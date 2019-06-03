@@ -7,20 +7,19 @@ namespace NetworkGame
 {
     public class PlayerScript : NetworkBehaviour
     {
+        #region Variables
         public float movementSpeed = 10f;
         public float rotationSpeed = 10f;
         public float jumpHeight = 2f;
         private bool isGrounded = false;
+        #endregion
+
         private Rigidbody rigid;
-        /// <summary>
-        /// Resync
-        /// </summary>
         // Use this for initialization
         void Start()
         {
             //Set rigid as RigidBody component
-            rigid = GetComponent<Rigidbody>();
-
+            rigid = GetComponent<Rigidbody>();  
             //Get Audio Listener from Camera
             AudioListener audioListener = GetComponentInChildren<AudioListener>();
             //Get camera from scene
