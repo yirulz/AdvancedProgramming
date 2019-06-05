@@ -14,19 +14,33 @@ namespace NetworkGame
         private bool isGrounded = false;
         #endregion
 
+        public class PlayerStats
+        {
+            int health;
+            int shield;
+
+            public PlayerStats(int hp, int shi)
+            {
+                health = hp;
+                shi = shield;
+            }
+        }
+
+        public PlayerStats ps = new PlayerStats(100, 100);
+
         private Rigidbody rigid;
         // Use this for initialization
         void Start()
         {
             //Set rigid as RigidBody component
-            rigid = GetComponent<Rigidbody>();  
+            rigid = GetComponent<Rigidbody>();
             //Get Audio Listener from Camera
             AudioListener audioListener = GetComponentInChildren<AudioListener>();
             //Get camera from scene
             Camera camera = GetComponentInChildren<Camera>();
 
             //If instance is local player
-            if(isLocalPlayer)
+            if (isLocalPlayer)
             {
                 //enable camera and audio listener
                 camera.enabled = true;
@@ -80,7 +94,7 @@ namespace NetworkGame
                 //If space is press
                 case KeyCode.Space:
                     //Check if grounded
-                    if(isGrounded)
+                    if (isGrounded)
                     {
                         //Add force to rigid making it go up at the rate of jump speed. Forcemode.impluse to reach max jump speed
                         rigid.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
@@ -88,7 +102,7 @@ namespace NetworkGame
                     }
                     break;
             }
-            
+
             //Move rigid position
             rigid.MovePosition(position);
             //Move rigid rotation

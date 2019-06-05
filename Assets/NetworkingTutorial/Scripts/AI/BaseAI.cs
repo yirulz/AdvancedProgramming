@@ -15,7 +15,7 @@ public class BaseAI : MonoBehaviour
         player = FindObjectOfType<Rigidbody>();
     }
 
-    public void Update()
+    public virtual void Update()
     {
         UpdateLocation();
     }
@@ -29,14 +29,6 @@ public class BaseAI : MonoBehaviour
         else if(player)
         {
             nav.SetDestination(player.transform.position);
-        }
-    }
-
-    public class FindPlayer : BaseAI
-    {
-        public override void UpdateLocation()
-        {
-            
         }
     }
 }
