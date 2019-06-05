@@ -13,21 +13,10 @@ namespace NetworkGame
         public float jumpHeight = 2f;
         private bool isGrounded = false;
         #endregion
+        public int healthP;
+        public int sheidlP;
 
-        public class PlayerStats
-        {
-            int health;
-            int shield;
-
-            public PlayerStats(int hp, int shi)
-            {
-                health = hp;
-                shi = shield;
-            }
-        }
-
-        public PlayerStats ps = new PlayerStats(100, 100);
-
+        
         private Rigidbody rigid;
         // Use this for initialization
         void Start()
@@ -53,6 +42,7 @@ namespace NetworkGame
                 camera.enabled = false;
                 audioListener.enabled = false;
             }
+            
         }
 
         // Update is called once per frame

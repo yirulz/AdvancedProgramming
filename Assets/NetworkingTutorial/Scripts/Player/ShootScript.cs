@@ -12,6 +12,7 @@ public class ShootScript : NetworkBehaviour
     public LayerMask mask;
     //Timer for shooting
     private float fireFactor = 0f;
+    public Inventory inv;
 
     // Update is called once per frame
     void Update()
@@ -61,6 +62,7 @@ public class ShootScript : NetworkBehaviour
             {
                 //Shoot
                 Shoot();
+                
             }
         }
     }
