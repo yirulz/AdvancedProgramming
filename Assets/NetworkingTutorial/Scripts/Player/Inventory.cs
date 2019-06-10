@@ -5,17 +5,19 @@ using System;
 
 public class Inventory : MonoBehaviour
 {
+    [SerializeField]
     int bullets;
+    [SerializeField]
     int granades;
 
     [Serializable]
     public class StartingBackpack
     {
-        [SerializeField]
+        public static
         int bullet;
-        [SerializeField]
-        int shield;
-        [SerializeField]
+        public static
+       int shield;
+        public static
         int granades;
 
         public StartingBackpack(int bull, int shi, int nade)

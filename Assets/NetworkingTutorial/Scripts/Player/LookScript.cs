@@ -17,6 +17,7 @@ public class LookScript : NetworkBehaviour
     private float pitch = 0f;
 
     private GameObject mainCamera;
+    [HideInInspector]
     //Rotation variable
     public float rotationX , rotationY;
 

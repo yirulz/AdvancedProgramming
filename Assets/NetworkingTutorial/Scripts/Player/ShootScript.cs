@@ -14,6 +14,8 @@ public class ShootScript : NetworkBehaviour
     private float fireFactor = 0f;
     public Inventory inv;
 
+    RaycastHit hit;
+
     // Update is called once per frame
     void Update()
     {
@@ -28,13 +30,18 @@ public class ShootScript : NetworkBehaviour
     [Command]
     void Cmd_PlayerShot(string _id)
     {
-        Debug.Log("Player" + _id + "has been shot!");
+        Debug.Log(_id +" has been shot!");
+    }
+
+    [Command]
+    void Cmd_DestroyEnemy()
+    {
+        Destroy(hit.transform.gameObject);
     }
 
     [Client]
     void Shoot()
     {
-        RaycastHit hit;
 
         Debug.Log("Shooting");
         //Ray cast forward
@@ -45,6 +52,11 @@ public class ShootScript : NetworkBehaviour
             {
                 //Tell server name of player shot
                 Cmd_PlayerShot(hit.transform.name);
+            }
+            if (hit.transform.CompareTag("Enemy"))
+            {
+                Cmd_DestroyEnemy();
+
             }
         }
     }
