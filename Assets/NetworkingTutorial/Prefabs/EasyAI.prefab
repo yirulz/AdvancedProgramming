@@ -23,11 +23,12 @@ GameObject:
   - component: {fileID: 23500762213487888}
   - component: {fileID: 136455234433265776}
   - component: {fileID: 195005192922053534}
-  - component: {fileID: 114573330717747794}
   - component: {fileID: 114631513625143056}
   - component: {fileID: 114812261348670328}
+  - component: {fileID: 114594578207593880}
+  - component: {fileID: 114745699698083270}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EasyAI
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +89,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1881395734682062}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114573330717747794
+--- !u!114 &114594578207593880
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1881395734682062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95ec45d64d3af6c4eaf34da2d39f165b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c4e0969c0987cb4692124a1eeea1453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
@@ -115,24 +116,43 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 238
-    i1: 0
-    i2: 52
-    i3: 129
-    i4: 224
-    i5: 70
-    i6: 151
-    i7: 36
-    i8: 137
-    i9: 18
-    i10: 227
-    i11: 198
-    i12: 130
-    i13: 33
-    i14: 88
-    i15: 25
+    i0: 7
+    i1: 16
+    i2: 113
+    i3: 193
+    i4: 110
+    i5: 181
+    i6: 62
+    i7: 84
+    i8: 59
+    i9: 22
+    i10: 115
+    i11: 201
+    i12: 228
+    i13: 57
+    i14: 209
+    i15: 239
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114745699698083270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1881395734682062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d312de34795cd1b46bce558ac2fd062e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aiName: 
+  health: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  range: 0
+  timer: 2
+  baseAIPrefab: {fileID: 0}
+  easyAIPrefab: {fileID: 0}
+  spawnLocation: {fileID: 0}
 --- !u!114 &114812261348670328
 MonoBehaviour:
   m_ObjectHideFlags: 1

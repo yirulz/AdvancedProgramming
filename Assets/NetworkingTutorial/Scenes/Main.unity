@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1121,26 +1121,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2049834845}
-  - component: {fileID: 2049834844}
+  - component: {fileID: 2049834847}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2049834844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2049834843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b3c44a5db817c4e8519cc77d817381, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aiPrefab: {fileID: 1881395734682062, guid: ee003481e04697248912e3c682215819, type: 2}
 --- !u!4 &2049834845
 Transform:
   m_ObjectHideFlags: 0
@@ -1154,3 +1142,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2049834847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049834843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d312de34795cd1b46bce558ac2fd062e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aiName: 
+  health: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  range: 0
+  timer: 2
+  baseAIPrefab: {fileID: 1881395734682062, guid: ee003481e04697248912e3c682215819,
+    type: 2}
+  easyAIPrefab: {fileID: 1881395734682062, guid: 071071c16eb53e543b1673c9e439d1ef,
+    type: 2}
+  spawnLocation: {fileID: 2049834845}
